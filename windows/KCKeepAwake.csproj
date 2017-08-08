@@ -107,8 +107,8 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RNDeviceInfo.cs" />
-    <Compile Include="RNDeviceModule.cs" />
+    <Compile Include="KCKeepAwake.cs" />
+    <Compile Include="KCKeepAwakeModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\DeviceInfo.rd.xml" />
   </ItemGroup>
