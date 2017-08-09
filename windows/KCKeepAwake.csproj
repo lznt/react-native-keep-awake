@@ -7,8 +7,8 @@
     <ProjectGuid>{87EFEA67-42DF-451C-8734-8B6DF9CD40FA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DeviceInfo</RootNamespace>
-    <AssemblyName>DeviceInfo</AssemblyName>
+    <RootNamespace>KCKeepAwake</RootNamespace>
+    <AssemblyName>KCKeepAwake</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
@@ -110,7 +110,7 @@
     <Compile Include="KCKeepAwake.cs" />
     <Compile Include="KCKeepAwakeModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Properties\DeviceInfo.rd.xml" />
+    <EmbeddedResource Include="Properties\KCKeepAwake.rd.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\react-native-windows\ReactWindows\ReactNative\ReactNative.csproj">
