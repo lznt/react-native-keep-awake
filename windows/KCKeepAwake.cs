@@ -10,10 +10,10 @@ namespace ReactNative.Modules.KCKeepAwake
     {
         public IReadOnlyList<INativeModule> CreateNativeModules(ReactContext reactContext)
         {
-            KCKeepAwake module = new KCKeepAwake(reactContext);
+            KCKeepAwakeModule module = new KCKeepAwakeModule(reactContext);
             return new List<INativeModule>
         {
-            new KCKeepAwake(reactContext)
+            new KCKeepAwakeModule(reactContext)
         };
         }
 
