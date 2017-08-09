@@ -51,8 +51,8 @@ namespace ReactNative.Modules.KCKeepAwake
             {
                 if (dispRequest != null)
                 {
-                    dispRequest = new Windows.System.Display.DisplayRequest();
                     dispRequest.RequestRelease();
+                    dispRequest = null;
                 }
             });
         }
