@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Net.Http;
 using Windows.ApplicationModel;
-using Windows.System.Display;
+using Windows.ApplicationModel.Core;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using WinRTXamlToolkit.Controls;
@@ -14,7 +15,7 @@ namespace ReactNative.Modules.KCKeepAwake
     public class KCKeepAwakeModule : ReactContextNativeModuleBase
     {
         ReactContext reactContext = null;
-        private DisplayRequest dispRequest = null;
+        private Windows.System.Display.DisplayRequest dispRequest = null;
 
         public KCKeepAwakeModule(ReactContext reactContext)
             : base(reactContext)
@@ -31,17 +32,23 @@ namespace ReactNative.Modules.KCKeepAwake
         }
 
         [ReactMethod]
-        public void activate()
+        async void activate()
         {
-            dispRequest = new DisplayRequest();
-            dispRequest.RequestActive();
+            await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+            {
+                dispRequest = new Windows.System.Display.DisplayRequest();
+                dispRequest.RequestActive();
+            });
         }
 
         [ReactMethod]
-        public void deactivate()
+        async void deactivate()
         {
-            dispRequest = new DisplayRequest();
-            dispRequest.RequestRelease();
+            await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+            {
+                dispRequest = new Windows.System.Display.DisplayRequest();
+                dispRequest.RequestRelease();
+            });
         }
     }
 }
