@@ -36,8 +36,11 @@ namespace ReactNative.Modules.KCKeepAwake
         {
             await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
             {
-                dispRequest = new Windows.System.Display.DisplayRequest();
-                dispRequest.RequestActive();
+                if (dispRequest == null)
+                {
+                    dispRequest = new Windows.System.Display.DisplayRequest();
+                    dispRequest.RequestActive();
+                }
             });
         }
 
@@ -46,8 +49,11 @@ namespace ReactNative.Modules.KCKeepAwake
         {
             await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
             {
-                dispRequest = new Windows.System.Display.DisplayRequest();
-                dispRequest.RequestRelease();
+                if (dispRequest != null)
+                {
+                    dispRequest = new Windows.System.Display.DisplayRequest();
+                    dispRequest.RequestRelease();
+                }
             });
         }
     }
