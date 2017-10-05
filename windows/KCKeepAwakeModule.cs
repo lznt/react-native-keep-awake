@@ -8,7 +8,6 @@ using Windows.ApplicationModel.Core;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using WinRTXamlToolkit.Controls;
 
 namespace ReactNative.Modules.KCKeepAwake
 {
